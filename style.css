@@ -474,8 +474,6 @@ a:hover { color: var(--moss-dark); }
 .page-hero .eyebrow { margin-bottom: 12px; }
 .page-hero p { max-width: 52ch; }
 
-/* ---------------- Gallery ---------------- */
-
 .gallery {
   padding: 56px 0 80px;
 }
@@ -490,9 +488,20 @@ a:hover { color: var(--moss-dark); }
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
-  background: linear-gradient(155deg, var(--bg-alt), var(--paper));
+  background: var(--bg-alt);
   display: flex;
   align-items: flex-end;
+  margin: 0;
+}
+.gallery-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery-tile:hover img {
+  transform: scale(1.03);
 }
 .gallery-tile svg {
   position: absolute;
@@ -509,15 +518,48 @@ a:hover { color: var(--moss-dark); }
   padding: 12px 14px;
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--ink-soft);
-  background: linear-gradient(0deg, rgba(255,255,255,0.85), rgba(255,255,255,0));
+  color: #ffffff;
+  background: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0));
+}
+
+.video-showcase {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.video-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--line);
+  background: #000;
+  display: inline-flex;
+}
+.video-frame iframe {
+  display: block;
+}
+
+/* ---------------- Featured Work Section ---------------- */
+.featured-work {
+  padding: 64px 0 80px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.featured-work-head {
+  margin-bottom: 32px;
+}
+.featured-work-head h2 {
+  margin: 0;
 }
 
 @media (max-width: 900px) {
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 540px) {
-  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
 }
 
 .gallery-note {
