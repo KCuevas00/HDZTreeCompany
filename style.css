@@ -341,7 +341,8 @@ a:hover { color: var(--moss-dark); }
 .nav-toggle-label span::before { position: absolute; top: -6px; }
 .nav-toggle-label span::after { position: absolute; top: 6px; }
 
-.nav-phone-mobile {
+.nav-sub-links,
+.nav-mobile-extras {
   display: none;
 }
 
@@ -363,37 +364,112 @@ a:hover { color: var(--moss-dark); }
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.25s ease;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: none;
+    z-index: 1000;
   }
-  .nav-links a {
-    width: 100%;
-    padding: 14px 24px;
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-links a::after { display: none; }
 
-  .nav-phone-mobile {
-    display: inline-flex !important;
+  .nav-item-wrap {
+    width: 100%;
+  }
+
+  .nav-links .nav-main-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+  }
+  .nav-links .nav-main-link::after { display: none; }
+  .nav-links .nav-main-link:hover,
+  .nav-links .nav-main-link[aria-current="page"] {
+    color: var(--moss);
+    background: rgba(71, 89, 47, 0.03);
+  }
+
+  .nav-sub-links {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 20px 10px 32px;
+    background: rgba(71, 89, 47, 0.02);
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+    gap: 0;
+  }
+  .nav-sub-link {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    color: var(--ink-soft) !important;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+  .nav-sub-link::before {
+    content: "—";
+    color: var(--moss);
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .nav-sub-link:hover {
+    color: var(--moss) !important;
+    background: transparent !important;
+    transform: translateX(3px);
+  }
+
+  .nav-mobile-extras {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 14px 18px 20px;
+    gap: 12px;
+    background: #fafbf7;
+  }
+  .nav-mobile-badge {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    margin: 12px 20px 16px !important;
-    padding: 12px 18px !important;
-    background: var(--moss) !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    border-radius: var(--radius) !important;
-    border: none !important;
-    box-shadow: 0 4px 14px rgba(71, 89, 47, 0.25);
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--moss-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     text-align: center;
-    width: calc(100% - 40px) !important;
   }
-  .nav-phone-mobile svg {
+  .nav-mobile-badge svg {
+    color: var(--moss);
+    flex-shrink: 0;
+  }
+  .nav-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .nav-mobile-call-btn,
+  .nav-mobile-quote-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 18px;
+    font-size: 0.92rem;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .nav-mobile-call-btn svg,
+  .nav-mobile-quote-btn svg {
     width: 16px;
     height: 16px;
-    color: #ffffff;
+    flex-shrink: 0;
   }
 
   .nav-cta .nav-phone-btn {
@@ -402,9 +478,10 @@ a:hover { color: var(--moss-dark); }
   .nav-cta { gap: 10px; }
 
   .nav-toggle:checked ~ .nav-links {
-    max-height: 380px;
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
   }
   .nav-toggle:checked ~ .nav-cta .nav-toggle-label span {
     background: transparent;
@@ -1626,6 +1703,137 @@ a:hover { color: var(--moss-dark); }
   color: var(--moss-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(71, 89, 47, 0.15);
+}
+
+/* Facebook Button */
+.btn-facebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1877f2;
+  color: #ffffff !important;
+  font-size: 0.96rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.22);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-facebook:hover {
+  background: #166fe5;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.35);
+}
+.contact-row .btn-facebook svg,
+.btn-facebook svg {
+  width: 19px;
+  height: 19px;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  margin: 0 !important;
+  flex-shrink: 0;
+}
+
+/* Call CTA Button formatting */
+.contact-call-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+}
+.contact-call-cta .cta-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+.contact-call-cta .cta-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.contact-call-cta .cta-sub {
+  font-size: 0.74rem;
+  font-weight: 600;
+  opacity: 0.92;
+  margin-top: 3px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Estimate Request Form (FormSubmit.co) */
+.estimate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 13px;
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--moss);
+  box-shadow: 0 0 0 3px rgba(71, 89, 47, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aa5b1;
+  font-size: 0.86rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 75px;
+}
+
+@media (max-width: 580px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 .map-frame {
