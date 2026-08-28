@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* Autumn Golden Hour Palette */
+  /* Warm Earth & Timber Palette */
   --bg: #FAF6EF;          /* Warm Sunlit Linen */
   --bg-alt: #F3ECE0;      /* Warm Almond / Oatmeal */
   --paper: #FFFFFF;
@@ -16,10 +16,10 @@
   --ink-soft: #5C5245;    /* Warm Chestnut Bark */
   --moss: #235328;        /* Vibrant Deep Forest Spruce */
   --moss-dark: #17381A;   /* Deep Alpine Pine */
-  --amber: #D97706;       /* Autumn Golden Amber */
-  --amber-dark: #B45309;  /* Deep Autumn Cider */
-  --amber-soft: #FEF3C7;  /* Soft Warm Honey Glow */
-  --terracotta: #C2410C;  /* Autumn Rust / Terracotta */
+  --amber: #8B4A26;       /* Warm Chestnut Timber Brown */
+  --amber-dark: #683415;  /* Deep Roasted Walnut / Bark Brown */
+  --amber-soft: #F4E8DC;  /* Soft Warm Timber / Birch Cream */
+  --terracotta: #7C3A18;  /* Deep Cedar Brown */
   --line: #E5DEC9;        /* Warm Wheat Border */
   --line-strong: #D6CCA8; /* Warm Toasted Wheat Line */
   --radius: 4px;
@@ -154,17 +154,17 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  background: linear-gradient(135deg, #8B4A26 0%, #683415 100%);
   color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.32), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(104, 52, 21, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  background: linear-gradient(135deg, #9C542C 0%, #7A3B18 100%);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(217, 119, 6, 0.44), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 28px rgba(104, 52, 21, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .btn-primary:active {
@@ -239,12 +239,12 @@ a:hover {
 }
 
 .top-bar-phone svg {
-  color: #FCD34D;
+  color: #E5BF94;
   flex-shrink: 0;
 }
 
 .top-bar-phone:hover {
-  color: #FCD34D;
+  color: #E5BF94;
 }
 
 .top-bar-right {
@@ -1190,7 +1190,7 @@ a:hover {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+    background: linear-gradient(135deg, #8B4A26 0%, #683415 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: #ffffff;
@@ -1199,7 +1199,7 @@ a:hover {
     justify-content: center;
     text-decoration: none;
     border: 1.5px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 4px 14px rgba(217, 119, 6, 0.5);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 4px 14px rgba(104, 52, 21, 0.5);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
@@ -1646,20 +1646,20 @@ a:hover {
   width: 48px;
   height: 48px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  background: linear-gradient(135deg, #8B4A26 0%, #683415 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
   margin-bottom: 6px;
-  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.45);
+  box-shadow: 0 4px 14px rgba(104, 52, 21, 0.45);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 .service-card:hover .service-icon-box {
   transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 8px 22px rgba(217, 119, 6, 0.65);
+  box-shadow: 0 8px 22px rgba(104, 52, 21, 0.65);
 }
 
 .service-icon-box svg {
@@ -1697,7 +1697,7 @@ a:hover {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #FCD34D;
+  color: #DE9C68;
   transition: color 0.2s ease, gap 0.2s ease;
 }
 
@@ -1779,7 +1779,7 @@ a:hover {
 }
 
 .cta-band .btn-primary {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  background: linear-gradient(135deg, #8B4A26 0%, #683415 100%);
   color: #fff;
   font-size: 1rem;
   padding: 14px 28px;
@@ -1788,7 +1788,7 @@ a:hover {
 }
 
 .cta-band .btn-primary:hover {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  background: linear-gradient(135deg, #9C542C 0%, #7A3B18 100%);
   color: #fff;
 }
 
@@ -2038,7 +2038,7 @@ a:hover {
   align-items: center;
   gap: 8px;
   background: var(--amber-soft);
-  border: 1px solid rgba(217, 119, 6, 0.3);
+  border: 1px solid rgba(139, 74, 38, 0.28);
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.82rem;
@@ -2050,7 +2050,7 @@ a:hover {
 .reviews-rating-badge .stars {
   display: flex;
   gap: 2px;
-  color: #D97706;
+  color: #B87333;
   flex-shrink: 0;
 }
 
@@ -2647,38 +2647,25 @@ a:hover {
   flex-shrink: 0;
 }
 
-/* Call CTA Button formatting */
+/* Call CTA Button formatting (proportioned to match btn-facebook) */
 .contact-call-cta {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 13px 20px;
-  border-radius: 14px;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
   text-decoration: none;
-}
-
-.contact-call-cta .cta-text-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.2;
-}
-
-.contact-call-cta .cta-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 0.96rem;
+  font-weight: 600;
   letter-spacing: 0.01em;
 }
 
-.contact-call-cta .cta-sub {
-  font-size: 0.74rem;
-  font-weight: 600;
-  opacity: 0.92;
-  margin-top: 3px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.contact-call-cta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* Estimate Request Form (FormSubmit.co) */
@@ -2965,20 +2952,20 @@ a:hover {
 .services-summary-banner {
   margin-top: 40px;
   background: linear-gradient(135deg, #FAF6EF 0%, #F5ECE0 100%);
-  border: 1.5px solid rgba(217, 119, 6, 0.35);
+  border: 1.5px solid rgba(139, 74, 38, 0.28);
   border-radius: var(--radius);
   padding: 28px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.08);
+  box-shadow: 0 4px 20px rgba(104, 52, 21, 0.06);
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .services-summary-banner:hover {
   border-color: var(--amber);
-  box-shadow: 0 10px 28px rgba(217, 119, 6, 0.16);
+  box-shadow: 0 10px 28px rgba(104, 52, 21, 0.14);
   transform: translateY(-2px);
 }
 
@@ -3134,7 +3121,7 @@ a:hover {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  background: linear-gradient(135deg, #8B4A26 0%, #683415 100%);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
@@ -3142,7 +3129,7 @@ a:hover {
   letter-spacing: 0.08em;
   padding: 5px 12px;
   border-radius: 4px;
-  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+  box-shadow: 0 4px 14px rgba(104, 52, 21, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.35);
   z-index: 2;
 }
@@ -3198,7 +3185,7 @@ a:hover {
 
 .service-alert-box {
   background: #FFFDF8;
-  border: 1px solid rgba(217, 119, 6, 0.22);
+  border: 1px solid rgba(139, 74, 38, 0.2);
   border-left: 3.5px solid var(--amber);
   padding: 14px 18px;
   border-radius: 4px;
@@ -3206,7 +3193,7 @@ a:hover {
   color: var(--ink-soft);
   margin-bottom: 24px;
   line-height: 1.55;
-  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.04);
+  box-shadow: 0 2px 8px rgba(104, 52, 21, 0.04);
 }
 
 .service-alert-box strong {
