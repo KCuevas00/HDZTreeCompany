@@ -747,14 +747,13 @@ a:hover {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: scale(1.04);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
+  overflow: hidden;
 }
 
 .hero-slide.active {
   opacity: 1;
-  transform: scale(1);
   pointer-events: auto;
 }
 
@@ -763,6 +762,20 @@ a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.0);
+}
+
+.hero-slide.active img {
+  animation: kenBurnsZoom 4.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.09);
+  }
 }
 
 .hero-photo-badge {
