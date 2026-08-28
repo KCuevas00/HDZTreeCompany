@@ -140,35 +140,92 @@
             </div>
           </div>
 
-          <!-- Animated 5-Image Hero Showcase -->
-          <div class="hero-showcase" id="hero-showcase">
-            <div class="hero-slide active">
-              <img src="photos/guyintree.jpg"
-                alt="Certified arborist climbing tree for precision trimming in Aurora, IL">
-            </div>
-            <div class="hero-slide">
-              <img src="photos/woodenfencetreeafter.jpg"
-                alt="Lush green lawn and clean yard after tree removal in Aurora, IL">
-            </div>
-            <div class="hero-slide">
-              <img src="photos/guyoncleantree.jpg"
-                alt="Certified arborist pruning and shaping high canopy in Aurora, IL">
-            </div>
-            <div class="hero-slide">
-              <img src="photos/oldtreeafter.jpg" alt="Mature shade tree trimmed with balanced canopy">
-            </div>
-            <div class="hero-slide">
-              <img src="photos/wirefencetreeafter.jpg" alt="Property boundary cleared of overgrown trees along fence">
+          <!-- Animated Cascading Before & After Showcase -->
+          <div class="hero-showcase-wrap">
+            <div class="hero-showcase" id="hero-showcase">
+              <!-- Slide 1: Corner Tree Removal -->
+              <div class="hero-slide active">
+                <div class="hero-dual-card before">
+                  <span class="hero-card-pill before">Before</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/bigcornertreebefore.jpg" alt="Corner tree before removal" loading="lazy">
+                  </div>
+                </div>
+                <div class="hero-dual-card after">
+                  <span class="hero-card-pill after">After</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/bigcornertreeafter.jpg" alt="Clean yard and corner property after tree removal" loading="lazy">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Wooden Fence Line Removal -->
+              <div class="hero-slide">
+                <div class="hero-dual-card before">
+                  <span class="hero-card-pill before">Before</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/woodenfencetreewaybefore.jpg" alt="Overhanging tree along wooden fence before removal" loading="lazy">
+                  </div>
+                </div>
+                <div class="hero-dual-card after">
+                  <span class="hero-card-pill after">After</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/woodenfencetreeafter.jpg" alt="Fence line protected and tree completely removed" loading="lazy">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Emergency Storm Cleanup -->
+              <div class="hero-slide">
+                <div class="hero-dual-card before">
+                  <span class="hero-card-pill before">Before</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/bigfallentree.jpg" alt="Fallen storm damage tree across yard" loading="lazy">
+                  </div>
+                </div>
+                <div class="hero-dual-card after">
+                  <span class="hero-card-pill after">After</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/bigfallentreeafter.jpg" alt="Spotless yard restored after emergency storm cleanup" loading="lazy">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4: Dead Tree Fence Preservation -->
+              <div class="hero-slide">
+                <div class="hero-dual-card before">
+                  <span class="hero-card-pill before">Before</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/bigdeadtreefence.jpg" alt="Hazardous dead tree over property fence" loading="lazy">
+                  </div>
+                </div>
+                <div class="hero-dual-card after">
+                  <span class="hero-card-pill after">After</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/bigdeadtreefenceafter.jpg" alt="Hazardous tree removed with fence completely safe" loading="lazy">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5: Wire Fence Line Clearing -->
+              <div class="hero-slide">
+                <div class="hero-dual-card before">
+                  <span class="hero-card-pill before">Before</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/wirefencetreebefore.jpg" alt="Heavy brush and trees over wire fence line" loading="lazy">
+                  </div>
+                </div>
+                <div class="hero-dual-card after">
+                  <span class="hero-card-pill after">After</span>
+                  <div class="hero-card-img-wrap">
+                    <img src="photos/wirefencetreeafter.jpg" alt="Clean property boundary and wire fence line cleared" loading="lazy">
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Slide Navigation Dots -->
-            <div class="hero-slider-dots" id="hero-slider-dots">
-              <button class="slider-dot active" aria-label="Slide 1"></button>
-              <button class="slider-dot" aria-label="Slide 2"></button>
-              <button class="slider-dot" aria-label="Slide 3"></button>
-              <button class="slider-dot" aria-label="Slide 4"></button>
-              <button class="slider-dot" aria-label="Slide 5"></button>
-            </div>
+            <div class="hero-slider-dots" id="hero-slider-dots"><button class="slider-dot active" aria-label="Slide 1"></button><button class="slider-dot" aria-label="Slide 2"></button><button class="slider-dot" aria-label="Slide 3"></button><button class="slider-dot" aria-label="Slide 4"></button><button class="slider-dot" aria-label="Slide 5"></button></div>
           </div>
         </div>
       </div>
@@ -1317,7 +1374,7 @@
 
     const startHeroSlider = () => {
       stopHeroSlider();
-      heroSlideTimer = setInterval(nextHeroSlide, 4200);
+      heroSlideTimer = setInterval(nextHeroSlide, 4500);
     };
 
     const stopHeroSlider = () => {
@@ -1325,19 +1382,12 @@
     };
 
     heroDots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
         setHeroSlide(idx);
         startHeroSlider();
       });
     });
-
-    const heroShowcaseEl = document.getElementById('hero-showcase');
-    if (heroShowcaseEl) {
-      heroShowcaseEl.addEventListener('mouseenter', stopHeroSlider);
-      heroShowcaseEl.addEventListener('mouseleave', startHeroSlider);
-      heroShowcaseEl.addEventListener('touchstart', stopHeroSlider, { passive: true });
-      heroShowcaseEl.addEventListener('touchend', startHeroSlider, { passive: true });
-    }
 
     startHeroSlider();
 
