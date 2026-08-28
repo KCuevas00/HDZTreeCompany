@@ -327,7 +327,6 @@
   <div class="lightbox-content-wrap" id="lightbox-content-wrap">
     <img src="" alt="" class="lightbox-img" id="lightbox-img">
     <div class="lightbox-info">
-      <span class="lightbox-caption" id="lightbox-caption"></span>
       <span class="lightbox-counter" id="lightbox-counter"></span>
     </div>
   </div>
@@ -356,7 +355,6 @@
   const galleryTiles = Array.from(document.querySelectorAll('.gallery-tile img'));
   const lightbox = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxCounter = document.getElementById('lightbox-counter');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
@@ -372,7 +370,6 @@
     const targetImg = galleryTiles[currentIndex];
     lightboxImg.src = targetImg.src;
     lightboxImg.alt = targetImg.alt;
-    lightboxCaption.textContent = targetImg.alt || 'Project Photo';
     lightboxCounter.textContent = `${currentIndex + 1} / ${galleryTiles.length}`;
   };
 

@@ -421,7 +421,7 @@ a:hover { color: var(--moss-dark); }
 
 .hero {
   position: relative;
-  padding: calc(var(--nav-h) + 32px) 0 80px;
+  padding: calc(var(--nav-h) + 48px) 0 96px;
   overflow: hidden;
   background: 
     linear-gradient(to right, rgba(243, 245, 238, 0.94) 0%, rgba(243, 245, 238, 0.80) 42%, rgba(243, 245, 238, 0.42) 78%, rgba(243, 245, 238, 0.15) 100%),
@@ -433,6 +433,32 @@ a:hover { color: var(--moss-dark); }
   max-width: 620px;
   position: relative;
   z-index: 2;
+}
+
+.hero-title {
+  margin: 0 0 42px;
+}
+
+.hero-title-brand {
+  display: block;
+  font-size: clamp(2.5rem, 5.2vw, 3.9rem);
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.hero-title-sub {
+  display: block;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--moss);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 /* Hero Entrance Animations */
@@ -481,7 +507,7 @@ a:hover { color: var(--moss-dark); }
 }
 
 .hero .eyebrow {
-  margin-bottom: 14px;
+  margin-bottom: 22px;
   animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -489,18 +515,11 @@ a:hover { color: var(--moss-dark); }
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
 }
 
-.hero p.lede {
-  font-size: 1.15rem;
-  max-width: 46ch;
-  color: var(--ink-soft);
-  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
+  align-items: center;
+  gap: 16px;
   animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
 }
 
@@ -765,36 +784,47 @@ a:hover { color: var(--moss-dark); }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--bg-alt);
+  position: relative;
+  z-index: 3;
 }
 .trust .container {
-  padding: 18px 24px;
+  padding: 12px 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 32px;
+  gap: 8px 24px;
   justify-content: center;
   align-items: center;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--ink);
   text-align: center;
 }
 .trust span {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
 }
 .trust svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   color: var(--moss);
   flex-shrink: 0;
+}
+
+@media (max-width: 780px) {
+  .trust .container {
+    padding: 10px 16px;
+    gap: 8px 16px;
+    font-size: 0.78rem;
+  }
 }
 
 /* ---------------- Services ---------------- */
 
 .services {
-  padding: 72px 0 80px;
+  padding: 48px 0 64px;
   position: relative;
 }
 
@@ -1431,31 +1461,20 @@ a:hover { color: var(--moss-dark); }
   margin-top: 14px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  max-width: 800px;
-  color: #ffffff;
-  font-size: 0.92rem;
-  gap: 16px;
-}
-
-.lightbox-caption {
-  font-weight: 500;
-  color: #e4e9da;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .lightbox-counter {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #9ab87a;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 4px 12px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #e4e9da;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  padding: 5px 16px;
   border-radius: 999px;
-  flex-shrink: 0;
 }
 
 /* Lightbox Controls */
