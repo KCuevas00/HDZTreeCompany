@@ -583,29 +583,33 @@ a:hover {
   }
 
   .top-bar {
-    padding: 6px 0;
+    padding: 7px 0;
   }
 
-  .top-bar-left {
-    display: none;
+  .top-bar-left,
+  .top-bar-service-area,
+  .hide-mobile {
+    display: none !important;
   }
 
   .top-bar-container {
-    padding: 0 16px;
-    justify-content: center;
+    padding: 0 12px;
+    justify-content: center !important;
     gap: 8px;
   }
 
   .top-bar-phone {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
   }
 
   .top-bar-link {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
   }
 
   .top-bar-right {
-    gap: 10px;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
   }
 
   .nav-brand img {
