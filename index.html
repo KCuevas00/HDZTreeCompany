@@ -90,25 +90,41 @@
             </div>
           </div>
 
-          <!-- Single Featured Photo for Desktop -->
-          <div class="hero-photo-card single-desktop">
-            <img src="photos/guyintree.jpg" alt="Certified arborist working in tree canopy in Aurora, IL">
-            <span class="hero-photo-tag">On the Job</span>
-            <div class="hero-photo-badge">Certified Arborist on Site</div>
-          </div>
-
-          <!-- Duo Photos for Mobile (In-Action Climber + Clean Green Grass Lawn) -->
-          <div class="hero-photos-duo-mobile">
-            <div class="hero-duo-card">
-              <img src="photos/guyintree.jpg"
-                alt="Certified arborist climbing tree for precision trimming in Aurora, IL">
+          <!-- Animated 5-Image Hero Showcase -->
+          <div class="hero-showcase" id="hero-showcase">
+            <div class="hero-slide active">
+              <img src="photos/guyintree.jpg" alt="Certified arborist climbing tree for precision trimming in Aurora, IL">
               <span class="hero-photo-tag">In Action</span>
+              <div class="hero-photo-badge">Certified Arborist on Site</div>
             </div>
-            <div class="hero-duo-card">
-              <img src="photos/woodenfencetreeafter.jpg"
-                alt="Lush green lawn and clean yard after tree removal in Aurora, IL">
+            <div class="hero-slide">
+              <img src="photos/woodenfencetreeafter.jpg" alt="Lush green lawn and clean yard after tree removal in Aurora, IL">
               <span class="hero-photo-tag">Clean Lawn</span>
-              <div class="hero-photo-badge">Zero Damage</div>
+              <div class="hero-photo-badge">Zero Property Damage</div>
+            </div>
+            <div class="hero-slide">
+              <img src="photos/guyoncleantree.jpg" alt="Certified arborist pruning and shaping high canopy in Aurora, IL">
+              <span class="hero-photo-tag">Canopy Care</span>
+              <div class="hero-photo-badge">Precision Pruning</div>
+            </div>
+            <div class="hero-slide">
+              <img src="photos/oldtreeafter.jpg" alt="Mature shade tree trimmed with balanced canopy">
+              <span class="hero-photo-tag">Canopy Care</span>
+              <div class="hero-photo-badge">Healthy Tree Growth</div>
+            </div>
+            <div class="hero-slide">
+              <img src="photos/wirefencetreeafter.jpg" alt="Property boundary cleared of overgrown trees along fence">
+              <span class="hero-photo-tag">Fence Clearing</span>
+              <div class="hero-photo-badge">Debris Cleared &amp; Hauled</div>
+            </div>
+
+            <!-- Slide Navigation Dots -->
+            <div class="hero-slider-dots" id="hero-slider-dots">
+              <button class="slider-dot active" aria-label="Slide 1"></button>
+              <button class="slider-dot" aria-label="Slide 2"></button>
+              <button class="slider-dot" aria-label="Slide 3"></button>
+              <button class="slider-dot" aria-label="Slide 4"></button>
+              <button class="slider-dot" aria-label="Slide 5"></button>
             </div>
           </div>
         </div>
@@ -330,6 +346,230 @@
 
         <div style="text-align: center; margin-top: 36px;">
           <a href="gallery.html" class="btn btn-ghost">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Reviews & Recommendations Section (3-Card Carousel) -->
+    <section class="reviews-section" id="reviews-section">
+      <div class="container">
+        <div class="reviews-head">
+          <div class="reviews-title-wrap">
+            <p class="eyebrow">Client Feedback</p>
+            <h2>Recommended by Homeowners</h2>
+          </div>
+          <div class="reviews-rating-badge">
+            <div class="stars">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <span>5.0 ★ (100+ Google & Facebook Reviews)</span>
+          </div>
+        </div>
+
+        <div class="reviews-carousel-wrap">
+          <!-- Page 1 -->
+          <div class="carousel-page active" id="carousel-page-1">
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Gustavo Uribe</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“Provided same day free quote for myself and my neighbors after the storms. Very reasonable prices, accessible, and fit us in his schedule quickly. 100% recommend.”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Mindy Mirabelli</span>
+                <span class="review-tag facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</span>
+              </div>
+              <p class="review-text">“Excellent customer service, very prompt, knowledgeable, and professional! Highly recommend!”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Hail Caesar</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“Fast and efficient, and they took the time to make sure our plant life and structures stayed intact. You're not gonna find better service at a better price.”</p>
+            </div>
+          </div>
+
+          <!-- Page 2 -->
+          <div class="carousel-page" id="carousel-page-2">
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Carl M. Gilbertsen</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Local Guide
+                </span>
+              </div>
+              <p class="review-text">“Had a tree branch fall and needed a few other things done. Quick, did a great job, and everything looks great with a very good price too! Highly recommend.”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Bridget DiBella</span>
+                <span class="review-tag facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</span>
+              </div>
+              <p class="review-text">“They were prompt, did an amazing job trimming my mother's pin oak, and cleaned up afterwards. Highly recommend!”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Erika Lyons</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“I absolutely recommend HDZ for any tree needs. Jesus is polite, prompt, clean, and a knowledgeable arborist. Outstanding customer service treatment.”</p>
+            </div>
+          </div>
+
+          <!-- Page 3 -->
+          <div class="carousel-page" id="carousel-page-3">
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Sarah Linden</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“HDZ took care of removing our 22-year-old tree following the storm! Response time was excellent for estimate and job completion. Appreciate their hard work.”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Leo Mendoza</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“Came out same day to take care of a huge branch hanging off our tree from the storm. Very quick with removal and disposal, very nice company! Highly recommend.”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Angelina Silva</span>
+                <span class="review-tag facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</span>
+              </div>
+              <p class="review-text">“Muy contenta con el trabajo de emergencia por tormenta. Jesús llegó muy puntual y amable con precio muy razonable. Recomiendo HDZ Tree Co.”</p>
+            </div>
+          </div>
+
+          <!-- Page 4 -->
+          <div class="carousel-page" id="carousel-page-4">
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">A T</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“The owner was kind and walked us through every step. Everyone did a great job and the final property walkthrough was very much appreciated!”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">D Cole</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“Hired HDZ to remove a large white pine, intrusive maple and elm, and trim a sycamore. Very impressed with their professionalism and quality.”</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-top">
+                <span class="review-author">Jesus Vargas</span>
+                <span class="review-tag google">
+                  <svg viewBox="0 0 24 24" width="13" height="13">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  Google Review
+                </span>
+              </div>
+              <p class="review-text">“Amazing job removing a large branch hanging over onto my neighbor's property. Fast response and completed the job sooner than promised!”</p>
+            </div>
+          </div>
+
+          <!-- Page Step Controls -->
+          <div class="reviews-slider-controls">
+            <button class="rev-ctrl-btn" id="car-prev-btn" aria-label="Previous Reviews">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            
+            <span class="rev-counter-pill" id="car-counter-pill">Page 1 / 4</span>
+
+            <button class="rev-ctrl-btn" id="car-next-btn" aria-label="Next Reviews">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            <div class="rev-dots-wrap" id="car-dots-wrap">
+              <button class="rev-dot active" aria-label="Page 1"></button>
+              <button class="rev-dot" aria-label="Page 2"></button>
+              <button class="rev-dot" aria-label="Page 3"></button>
+              <button class="rev-dot" aria-label="Page 4"></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -640,6 +880,83 @@
         }
       }, { passive: true });
     }
+
+    // --- Hero Showcase Auto-Slider (5 Images) ---
+    const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+    const heroDots = Array.from(document.querySelectorAll('.slider-dot'));
+    let heroSlideIndex = 0;
+    let heroSlideTimer = null;
+
+    const setHeroSlide = (idx) => {
+      if (!heroSlides.length) return;
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+      });
+      heroDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+      });
+      heroSlideIndex = idx;
+    };
+
+    const nextHeroSlide = () => {
+      let nextIdx = (heroSlideIndex + 1) % heroSlides.length;
+      setHeroSlide(nextIdx);
+    };
+
+    const startHeroSlider = () => {
+      stopHeroSlider();
+      heroSlideTimer = setInterval(nextHeroSlide, 4200);
+    };
+
+    const stopHeroSlider = () => {
+      if (heroSlideTimer) clearInterval(heroSlideTimer);
+    };
+
+    heroDots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        setHeroSlide(idx);
+        startHeroSlider();
+      });
+    });
+
+    const heroShowcaseEl = document.getElementById('hero-showcase');
+    if (heroShowcaseEl) {
+      heroShowcaseEl.addEventListener('mouseenter', stopHeroSlider);
+      heroShowcaseEl.addEventListener('mouseleave', startHeroSlider);
+      heroShowcaseEl.addEventListener('touchstart', stopHeroSlider, { passive: true });
+      heroShowcaseEl.addEventListener('touchend', startHeroSlider, { passive: true });
+    }
+
+    startHeroSlider();
+
+    // --- Reviews 3-Card Carousel ---
+    const carPages = Array.from(document.querySelectorAll('.carousel-page'));
+    const carDots = Array.from(document.querySelectorAll('#car-dots-wrap .rev-dot'));
+    const carCounter = document.getElementById('car-counter-pill');
+    const carPrevBtn = document.getElementById('car-prev-btn');
+    const carNextBtn = document.getElementById('car-next-btn');
+    let carPageIdx = 0;
+
+    const setCarPage = (idx) => {
+      if (!carPages.length) return;
+      if (idx < 0) idx = carPages.length - 1;
+      if (idx >= carPages.length) idx = 0;
+      carPageIdx = idx;
+
+      carPages.forEach((page, i) => {
+        if (page) page.classList.toggle('active', i === carPageIdx);
+      });
+      carDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === carPageIdx);
+      });
+      if (carCounter) carCounter.textContent = `Page ${carPageIdx + 1} / ${carPages.length}`;
+    };
+
+    if (carPrevBtn) carPrevBtn.addEventListener('click', () => setCarPage(carPageIdx - 1));
+    if (carNextBtn) carNextBtn.addEventListener('click', () => setCarPage(carPageIdx + 1));
+    carDots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => setCarPage(idx));
+    });
   </script>
 
   <!-- Floating Scroll Down Arrow Button (Hides at bottom of page) -->
