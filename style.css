@@ -1277,6 +1277,20 @@ a:hover { color: var(--moss-dark); }
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  gap: 8px;
+}
+
+.review-card-stars {
+  display: flex;
+  gap: 2px;
+  color: #e5a93b;
+  margin-left: auto;
+  margin-right: 4px;
+}
+
+.review-card-stars svg {
+  width: 12px;
+  height: 12px;
 }
 
 .review-author {
@@ -1581,14 +1595,14 @@ a:hover { color: var(--moss-dark); }
 .contact-service-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
   margin-top: 10px;
 }
 .contact-service-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  gap: 5px;
+  padding: 5px 12px;
   background: #eef2e6;
   border: 1px solid rgba(71, 89, 47, 0.22);
   border-radius: 999px;
@@ -1597,12 +1611,14 @@ a:hover { color: var(--moss-dark); }
   color: var(--ink);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .contact-service-tag svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   color: var(--moss);
   margin-top: 0;
+  flex-shrink: 0;
 }
 .contact-service-tag:hover {
   background: #ffffff;
