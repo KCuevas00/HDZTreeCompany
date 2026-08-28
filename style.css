@@ -193,10 +193,10 @@ a:hover {
 /* ---------------- Top Utility Bar ---------------- */
 
 .top-bar {
-  background: #E2E6E9;
-  border-bottom: 1px solid #CCD2D7;
+  background: #18371C;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.82rem;
-  color: #49535C;
+  color: #E2ECE3;
   padding: 6px 0;
   line-height: 1.3;
   position: relative;
@@ -207,8 +207,8 @@ a:hover {
 .site-header.scrolled .top-bar,
 .site-header.menu-open .top-bar,
 .site-header:has(.nav-toggle:checked) .top-bar {
-  background: #DCE1E5;
-  border-bottom: 1px solid #C4CBD1;
+  background: #132D17;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .top-bar-container {
@@ -232,19 +232,19 @@ a:hover {
   align-items: center;
   gap: 6px;
   font-weight: 600;
-  color: #1E242B;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 0.84rem;
   transition: color 0.15s ease;
 }
 
 .top-bar-phone svg {
-  color: var(--moss);
+  color: #FCD34D;
   flex-shrink: 0;
 }
 
 .top-bar-phone:hover {
-  color: var(--amber-dark);
+  color: #FCD34D;
 }
 
 .top-bar-right {
@@ -259,7 +259,7 @@ a:hover {
   gap: 6px;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #49535C;
+  color: #E2ECE3;
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -269,11 +269,11 @@ a:hover {
 }
 
 .top-bar-link:hover {
-  color: #11161B;
+  color: #FFFFFF;
 }
 
 .top-bar-divider {
-  color: #A6B0B8;
+  color: rgba(255, 255, 255, 0.3);
   font-size: 0.75rem;
 }
 
