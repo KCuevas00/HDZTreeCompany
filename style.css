@@ -627,9 +627,9 @@ a:hover {
 .hero-title-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
-  font-size: clamp(2.3rem, 4.8vw, 3.7rem);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
   font-family: 'Fraunces', serif;
   font-weight: 600;
   color: var(--ink);
@@ -639,12 +639,12 @@ a:hover {
 }
 
 .hero-title-logo {
-  width: clamp(52px, 5.5vw, 68px);
-  height: clamp(52px, 5.5vw, 68px);
+  width: clamp(72px, 8vw, 100px);
+  height: clamp(72px, 8vw, 100px);
   border-radius: 50%;
-  border: 2.5px solid var(--moss);
+  border: 3px solid var(--moss);
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
   flex-shrink: 0;
 }
 
