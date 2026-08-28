@@ -1689,15 +1689,35 @@ a:hover {
 
 /* ---------------- Service Area Section ---------------- */
 .service-area-section {
-  padding: 64px 0;
-  background: var(--paper);
+  position: relative;
+  padding: 72px 0 80px;
+  background-color: var(--paper);
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(243, 245, 238, 0.72) 0%, rgba(243, 245, 238, 0.94) 80%, rgba(243, 245, 238, 0.99) 100%),
+    url("data:image/svg+xml,%3Csvg width='700' height='500' viewBox='0 0 700 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2347592f' stroke-width='1.2' stroke-opacity='0.16'%3E%3Cpath d='M-50,90 Q180,140 350,80 T750,110' stroke-width='2.2' stroke-opacity='0.22'/%3E%3Cpath d='M90,-50 Q140,200 80,350 T120,550' stroke-width='2.2' stroke-opacity='0.22'/%3E%3Cpath d='M-50,260 Q220,230 450,300 T750,240' stroke-width='1.8' stroke-opacity='0.18'/%3E%3Cpath d='M400,-50 Q360,180 430,300 T380,550' stroke-width='2.0' stroke-opacity='0.20'/%3E%3Cpath d='M-50,360 C140,340 270,400 410,360 S610,390 750,370' stroke-width='1.4'/%3E%3Cpath d='M-50,190 C160,210 310,140 500,200 S630,170 750,180' stroke-width='1.4'/%3E%3Cpath d='M250,-50 C270,140 200,280 260,410 S230,480 250,550' stroke-width='1.4'/%3E%3Cpath d='M560,-50 C540,120 600,260 550,370 S580,480 570,550' stroke-width='1.4'/%3E%3Ccircle cx='350' cy='250' r='120' stroke-dasharray='4,6' stroke-opacity='0.20'/%3E%3Ccircle cx='350' cy='250' r='220' stroke-dasharray='6,8' stroke-opacity='0.15'/%3E%3Ccircle cx='350' cy='250' r='320' stroke-dasharray='8,10' stroke-opacity='0.10'/%3E%3Ccircle cx='350' cy='250' r='4' fill='%2347592f' fill-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-position: center center;
   border-bottom: 1px solid var(--line);
   text-align: center;
+  overflow: hidden;
 }
 
 .service-area-head {
+  position: relative;
+  z-index: 2;
   max-width: 640px;
   margin: 0 auto 28px;
+}
+
+.service-area-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.service-area-eyebrow svg {
+  color: var(--moss);
 }
 
 .service-area-head h2 {
@@ -1712,27 +1732,33 @@ a:hover {
 }
 
 .service-area-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  max-width: 920px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px 16px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .service-pill {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 10px 18px;
-  background: var(--bg-alt);
-  border: 1.5px solid var(--line);
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid var(--line-strong);
   border-radius: 999px;
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--ink);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .service-pill svg {
@@ -1748,6 +1774,31 @@ a:hover {
   color: var(--moss-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(71, 89, 47, 0.15);
+}
+
+@media (max-width: 900px) {
+  .service-area-pills {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 640px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .service-area-pills {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 10px;
+    max-width: 100%;
+  }
+  .service-pill {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+    gap: 6px;
+  }
+  .service-pill svg {
+    width: 13px;
+    height: 13px;
+  }
 }
 
 .contact-service-tags {
