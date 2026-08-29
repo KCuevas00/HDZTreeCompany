@@ -3181,66 +3181,66 @@ a:hover {
    Services Page Dedicated Components
    ============================================================ */
 
-.page-hero-inner {
-  max-width: 800px;
+.services-hero {
+  position: relative;
+  padding: calc(var(--header-h) + 52px) 0 58px;
+  background:
+    linear-gradient(to right, rgba(250, 246, 239, 0.96) 0%, rgba(250, 246, 239, 0.88) 46%, rgba(250, 246, 239, 0.42) 78%, rgba(250, 246, 239, 0.15) 100%),
+    url('photos/oldtreeafter.jpg') right center / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
 }
 
-.page-hero-title {
-  margin: 12px 0 16px;
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-  line-height: 1.12;
+.services-hero .page-hero-inner {
+  max-width: 660px;
 }
 
-.page-hero-lead {
-  font-size: 1.12rem;
-  line-height: 1.65;
-  color: var(--ink-soft);
-  margin-bottom: 24px;
+.services-hero .eyebrow {
+  margin-bottom: 8px;
+  color: var(--moss);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.page-hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.page-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
-  border-radius: 40px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  font-size: 0.88rem;
-  font-weight: 500;
+.services-hero .page-hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 6px 0 14px;
   color: var(--ink);
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
 }
 
-.page-hero-badge svg {
-  color: var(--amber-dark);
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
+.services-hero .page-hero-lead {
+  font-size: 1.15rem;
+  line-height: 1.62;
+  color: var(--ink-soft);
+  margin-bottom: 0;
+  max-width: 54ch;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
 }
 
-.page-hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+@media (max-width: 780px) {
+  .services-hero {
+    padding: calc(var(--header-h) + 32px) 0 42px;
+  }
+}
+
+@media (max-width: 520px) {
+  .services-hero {
+    padding: calc(var(--header-h) + 24px) 0 36px;
+  }
 }
 
 /* Service Detail Catalog */
 .services-catalog {
-  padding: 64px 0 72px;
-}
-
-.services-catalog-head {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 52px;
+  padding: 52px 0 72px;
 }
 
 .services-catalog-head h2 {
