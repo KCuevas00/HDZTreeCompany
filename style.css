@@ -902,6 +902,10 @@ a:hover {
   margin: 0;
 }
 
+.hero-desc-mobile {
+  display: none;
+}
+
 /* Hero Entrance Animations */
 @keyframes heroFadeUp {
   from {
@@ -1286,6 +1290,15 @@ a:hover {
   .hero-copy {
     margin-bottom: 24px;
     max-width: 100%;
+  }
+
+  .hero-lead-desktop,
+  .hero-desc-desktop {
+    display: none;
+  }
+
+  .hero-desc-mobile {
+    display: block;
   }
 
 
