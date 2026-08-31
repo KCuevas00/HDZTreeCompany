@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="photos/favicon-32x32.png?v=2">
 <link rel="icon" type="image/png" href="photos/logo-circle.png?v=2">
 <link rel="apple-touch-icon" sizes="180x180" href="photos/apple-touch-icon.png?v=2">
-<link rel="stylesheet" href="style.css?v=1.6">
+<link rel="stylesheet" href="style.css?v=1.7">
 
 <!-- Open Graph / Facebook / iMessage -->
 <meta property="og:type" content="website">
@@ -187,47 +187,63 @@
               <p style="font-size: 0.88rem; color: var(--ink-soft); margin: 0;">Fill out the form below and our team will get back to you with a free quote.</p>
             </div>
 
-            <form action="https://formsubmit.co/hdztreecompany@gmail.com" method="POST" class="estimate-form">
+            <!-- Submission Confirmation Banner -->
+            <div id="form-success-banner" class="form-success-alert" style="display: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div>
+                <strong style="display: block; font-size: 0.95rem; color: #1b5e20;">Estimate Request Sent!</strong>
+                <p style="margin: 3px 0 0; font-size: 0.86rem; color: #2e7d32; line-height: 1.4;">Thank you! We have received your request and will call or message you shortly with a free quote.</p>
+              </div>
+            </div>
+
+            <form action="https://formsubmit.co/hdztreecompany@gmail.com" method="POST" class="estimate-form" id="estimate-form">
               <!-- Spam prevention & config -->
-              <input type="text" name="_honey" style="display:none">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_subject" value="New Estimate Request — HDZ Tree Company">
+              <input type="hidden" name="_next" value="https://hdztreecompany.com/contact.html?submitted=true">
 
               <div class="form-row-2">
                 <div class="form-group">
                   <label for="form-name">Your Name *</label>
-                  <input type="text" id="form-name" name="name" required placeholder="e.g. John Smith">
+                  <input type="text" id="form-name" name="name" required minlength="2" maxlength="60" pattern="^[A-Za-z\s\.\-']{2,60}$" title="Please enter your name (letters only, at least 2 characters)." placeholder="e.g. John Smith" autocomplete="name">
                 </div>
                 <div class="form-group">
                   <label for="form-phone">Phone Number *</label>
-                  <input type="tel" id="form-phone" name="phone" required placeholder="(331) 555-0123">
+                  <input type="tel" id="form-phone" name="phone" required maxlength="18" placeholder="(331) 555-0123" autocomplete="tel" title="Please enter a valid 10-digit phone number.">
                 </div>
               </div>
 
               <div class="form-row-2">
                 <div class="form-group">
-                  <label for="form-city">City / Location</label>
-                  <input type="text" id="form-city" name="city" placeholder="e.g. Aurora, IL">
+                  <label for="form-email">Email Address <span style="font-weight: 400; font-size: 0.74rem; color: var(--ink-soft);">(Optional)</span></label>
+                  <input type="email" id="form-email" name="email" maxlength="100" placeholder="e.g. john@example.com" autocomplete="email">
                 </div>
                 <div class="form-group">
-                  <label for="form-service">Service Needed</label>
-                  <select id="form-service" name="service">
-                    <option value="Tree Removal">Tree Removal</option>
-                    <option value="Tree Trimming & Pruning">Tree Trimming &amp; Pruning</option>
-                    <option value="Storm Damage Cleanup">Storm Damage Cleanup</option>
-                    <option value="Stump Grinding">Stump Grinding</option>
-                    <option value="General Tree Assessment">General Assessment / Other</option>
-                  </select>
+                  <label for="form-city">City / Location</label>
+                  <input type="text" id="form-city" name="city" maxlength="60" placeholder="e.g. Aurora, IL">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="form-message">Project Details / Message</label>
-                <textarea id="form-message" name="message" rows="3" placeholder="Tell us about the tree work needed, urgency, or special instructions..."></textarea>
+                <label for="form-service">Service Needed *</label>
+                <select id="form-service" name="service" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="Tree Removal">Tree Removal</option>
+                  <option value="Tree Trimming & Pruning">Tree Trimming &amp; Pruning</option>
+                  <option value="Storm Damage Cleanup">Storm Damage Cleanup</option>
+                  <option value="Stump Grinding">Stump Grinding</option>
+                  <option value="General Tree Assessment">General Assessment / Other</option>
+                </select>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 13px 20px; font-size: 0.98rem; border-radius: 12px; margin-top: 4px;">
+              <div class="form-group">
+                <label for="form-message">Project Details / Message</label>
+                <textarea id="form-message" name="message" rows="3" maxlength="1200" placeholder="Tell us about the tree work needed, urgency, or special instructions..."></textarea>
+              </div>
+
+              <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 13px 20px; font-size: 0.98rem; border-radius: 12px; margin-top: 4px;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 <span>Send Estimate Request</span>
               </button>
@@ -324,6 +340,61 @@
   });
 
   updateHeaderState();
+
+  // Reveal estimate confirmation banner if redirected from FormSubmit
+  if (window.location.search.includes('submitted=true')) {
+    const banner = document.getElementById('form-success-banner');
+    if (banner) {
+      banner.style.display = 'flex';
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  // Auto-format phone input & validate 10-digit number
+  const phoneInput = document.getElementById('form-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      let digits = e.target.value.replace(/\D/g, '').substring(0, 10);
+      let formatted = '';
+      if (digits.length > 6) {
+        formatted = `(${digits.substring(0, 3)}) ${digits.substring(3, 6)}-${digits.substring(6, 10)}`;
+      } else if (digits.length > 3) {
+        formatted = `(${digits.substring(0, 3)}) ${digits.substring(3, 6)}`;
+      } else if (digits.length > 0) {
+        formatted = `(${digits.substring(0, 3)}`;
+      }
+      e.target.value = formatted;
+
+      if (digits.length < 10) {
+        phoneInput.setCustomValidity('Please enter a full 10-digit phone number.');
+      } else {
+        phoneInput.setCustomValidity('');
+      }
+    });
+  }
+
+  // Submit protection & feedback state
+  const estimateForm = document.getElementById('estimate-form');
+  const submitBtn = document.getElementById('form-submit-btn');
+  if (estimateForm && submitBtn) {
+    estimateForm.addEventListener('submit', (e) => {
+      const digits = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+      if (digits.length < 10) {
+        e.preventDefault();
+        phoneInput.setCustomValidity('Please enter a full 10-digit phone number.');
+        phoneInput.reportValidity();
+        phoneInput.focus();
+        return;
+      }
+      // Disable to prevent duplicate sends while submitting
+      setTimeout(() => {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.style.cursor = 'not-allowed';
+        submitBtn.innerHTML = '<span>Sending Request...</span>';
+      }, 50);
+    });
+  }
 </script>
 <!-- Floating Chat Icon on Mobile (Bottom Right) -->
 <div class="mobile-floating-chat" id="mobile-floating-chat">
