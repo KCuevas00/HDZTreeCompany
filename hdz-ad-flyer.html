@@ -129,6 +129,16 @@
       background: #445346;
     }
 
+    /* Responsive Mobile Scaler Stage */
+    .flyer-scaler-stage {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 auto;
+      transition: height 0.2s ease;
+    }
+
     /* THE FLYER CANVAS */
     .flyer-wrapper {
       position: relative;
@@ -137,9 +147,12 @@
       overflow: hidden;
       width: 740px;
       height: 1050px;
-      background: #E8DAC4; /* Solid authentic kraft paper tone */
+      background-color: #E8DAC4; /* Solid authentic kraft paper tone */
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
+      isolation: isolate;
+      transition: transform 0.2s ease;
     }
 
     /* Fine craft paper grain effect */
@@ -276,7 +289,7 @@
       margin-bottom: -1px;
       z-index: 5;
       overflow: hidden;
-      filter: drop-shadow(0 -2px 3px rgba(0,0,0,0.2));
+      background: #E8DAC4; /* Eliminates any transparent seam gaps on mobile/retina */
     }
 
     .torn-paper-edge-bottom {
@@ -286,7 +299,7 @@
       margin-top: -1px;
       z-index: 5;
       overflow: hidden;
-      filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
+      background: #E8DAC4; /* Eliminates any transparent seam gaps on mobile/retina */
     }
 
     /* ========================================================
@@ -463,18 +476,21 @@
       filter: grayscale(45%) contrast(105%);
     }
 
-    /* Plain, un-fancy BEFORE / AFTER text directly on images */
+    /* Plain, un-fancy BEFORE / AFTER text with solid dark micro-badge (never transparent) */
     .photo-label-plain {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 9px;
+      left: 9px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: #FFFFFF;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+      background: rgba(10, 24, 13, 0.9); /* Solid dark backing - 100% legible, never washed out */
+      padding: 3px 8px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.65);
       z-index: 2;
       pointer-events: none;
     }
@@ -586,11 +602,22 @@
 
     .contact-text-bold {
       font-family: 'Montserrat', sans-serif;
-      font-size: 19px;
+      font-size: 15.5px;
       font-weight: 800;
       letter-spacing: 0.6px;
       color: var(--kraft-ink);
-      line-height: 1.15;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .cities-subtext {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      color: #634F3C;
+      margin-top: 2px;
       text-transform: uppercase;
     }
 
@@ -643,6 +670,45 @@
       outline: 2px solid var(--amber-gold);
       background: rgba(245, 176, 39, 0.16);
       border-radius: 3px;
+    }
+
+    /* Mobile Responsiveness for Toolbar & Ad Scaling */
+    @media (max-width: 780px) {
+      body {
+        padding: 12px 8px 40px;
+        overflow-x: hidden;
+      }
+      .toolbar {
+        padding: 12px 14px;
+        margin-bottom: 16px;
+      }
+      .toolbar-title {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .toolbar-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .toolbar-actions .btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 11.5px;
+        padding: 9px 8px;
+      }
+      #btn-export-png {
+        grid-column: 1 / -1;
+        font-size: 13px;
+        padding: 11px 14px;
+      }
+      .notes-section {
+        padding: 16px;
+      }
+      .notes-grid {
+        grid-template-columns: 1fr !important;
+      }
     }
 
     /* Print styles */
@@ -744,11 +810,17 @@
       <button class="btn btn-secondary" id="btn-toggle-palette" onclick="toggleColorTheme()">
         🎨 Switch Theme
       </button>
+      <button class="btn btn-secondary" id="btn-toggle-fit" onclick="toggleMobileZoom()">
+        📱 Fit to Screen
+      </button>
     </div>
   </div>
 
-  <!-- THE AD CANVAS (CLICK ANY TEXT TO EDIT INLINE!) -->
-  <div class="flyer-wrapper" id="flyer-canvas">
+  <!-- RESPONSIVE MOBILE STAGE (Scales flyer on phones so the whole ad fits without cutoff) -->
+  <div class="flyer-scaler-stage" id="flyer-stage">
+
+    <!-- THE AD CANVAS (CLICK ANY TEXT TO EDIT INLINE!) -->
+    <div class="flyer-wrapper" id="flyer-canvas">
 
     <!-- TOP SECTION: Solid Kraft Paper Banner with Logo & Distinctive Arborist Badge -->
     <header class="flyer-header">
@@ -917,7 +989,8 @@
           <div class="contact-text-box">
             <div class="contact-label-small">Service Areas</div>
             <div class="contact-text-bold" contenteditable="true">
-              AURORA, IL &amp; FOX VALLEY
+              AURORA &bull; NAPERVILLE &bull; OSWEGO
+              <span class="cities-subtext">BATAVIA &bull; ST. CHARLES &bull; FOX VALLEY</span>
             </div>
           </div>
         </div>
@@ -949,7 +1022,8 @@
 
     </footer>
 
-  </div>
+  </div> <!-- /flyer-wrapper -->
+  </div> <!-- /flyer-scaler-stage -->
 
   <!-- DESIGN GUIDE & LAYOUT NOTES -->
   <div class="notes-section">
@@ -965,23 +1039,23 @@
       </div>
 
       <div class="note-card">
-        <strong>📷 4-Photo Before &amp; After Grid</strong>
-        <div>• <strong>Plain Text:</strong> Plain un-fussy BEFORE and AFTER labels directly on the photos (no pill boxes or borders).</div>
-        <div>• <strong>Grayscale Befores:</strong> Subtle 45% desaturation on before shots to emphasize the vibrant green after results.</div>
-        <div>• <strong>Doubled Separation:</strong> Generous 48px vertical gap clearly distinguishing Pair 1 from Pair 2.</div>
+        <strong>📱 Mobile Fit &amp; No Transparency Bugs</strong>
+        <div>• <strong>Auto Fit:</strong> Automatically scales the 740px ad to fit any phone screen width without side-cropping.</div>
+        <div>• <strong>No Transparent Glitches:</strong> Solid kraft backing on torn paper cuts eliminates transparent seam lines.</div>
+        <div>• <strong>Solid Dark Labels:</strong> Crisp, non-transparent micro-badges ensure BEFORE and AFTER are always 100% visible.</div>
       </div>
 
       <div class="note-card">
-        <strong>✨ Cleaned Up Elements</strong>
-        <div>• <strong>Services Spacing:</strong> Doubled empty line spacing (50px gap) cleanly separating each core tree service.</div>
-        <div>• <strong>Trust Line:</strong> Locked to 1 single horizontal line with <code>white-space: nowrap</code> (no wrapping).</div>
-        <div>• <strong>24/7 Response:</strong> Clean glowing lightning bolt icon + bold text, completely unbordered.</div>
+        <strong>📍 Multi-City Footer Coverage</strong>
+        <div>• <strong>Core Cities:</strong> Displays <code>AURORA • NAPERVILLE • OSWEGO</code> prominently.</div>
+        <div>• <strong>Sub-Cities:</strong> Highlights <code>BATAVIA • ST. CHARLES • FOX VALLEY</code> to capture high-value homeowners.</div>
+        <div>• <strong>Editable:</strong> Click any text to customize cities or add specific neighborhoods anytime.</div>
       </div>
 
       <div class="note-card">
         <strong>📐 Interactive Controls</strong>
+        <div>• <strong>Fit / 100% Size:</strong> Toggle between scaled-to-fit mobile view and 100% actual size.</div>
         <div>• <strong>Swap Before/Afters:</strong> Cycle through other transformation pairs from your job gallery.</div>
-        <div>• <strong>Switch Theme:</strong> Switch between 4 curated solid contractor palettes.</div>
         <div>• <strong>High-Res PNG:</strong> 1-click retina image download ready for social media and print.</div>
       </div>
     </div>
@@ -1067,6 +1141,42 @@
       document.getElementById('btn-toggle-palette').textContent = `🎨 Theme: ${t.name}`;
     }
 
+    // Responsive Mobile Screen Fitting
+    let isFitToScreen = true;
+
+    function updateMobileScale() {
+      const stage = document.getElementById('flyer-stage');
+      const flyer = document.getElementById('flyer-canvas');
+      if (!stage || !flyer) return;
+
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 780 && isFitToScreen) {
+        // Fits the entire 740px ad canvas within the phone screen width!
+        const availableWidth = windowWidth - 20;
+        const scale = Math.min(availableWidth / 740, 1);
+        flyer.style.transform = `scale(${scale})`;
+        flyer.style.transformOrigin = 'top center';
+        stage.style.height = `${Math.ceil(1050 * scale) + 10}px`;
+      } else {
+        flyer.style.transform = 'none';
+        flyer.style.transformOrigin = 'top center';
+        stage.style.height = 'auto';
+      }
+    }
+
+    function toggleMobileZoom() {
+      isFitToScreen = !isFitToScreen;
+      const btn = document.getElementById('btn-toggle-fit');
+      if (btn) {
+        btn.textContent = isFitToScreen ? '📱 Fit to Screen' : '🔍 100% Size';
+      }
+      updateMobileScale();
+    }
+
+    window.addEventListener('resize', updateMobileScale);
+    window.addEventListener('orientationchange', () => setTimeout(updateMobileScale, 150));
+    window.addEventListener('DOMContentLoaded', updateMobileScale);
+
     // 1-Click High Resolution PNG Exporter
     function exportAsPNG() {
       const btn = document.getElementById('btn-export-png');
@@ -1075,6 +1185,11 @@
       btn.disabled = true;
 
       const flyer = document.getElementById('flyer-canvas');
+      
+      // Temporarily remove CSS scale transform so export captures at full native resolution
+      const prevTransform = flyer.style.transform;
+      const prevOrigin = flyer.style.transformOrigin;
+      flyer.style.transform = 'none';
 
       // html2canvas high-res scale (2.5x for crisp retina output)
       html2canvas(flyer, {
@@ -1083,6 +1198,10 @@
         allowTaint: true,
         backgroundColor: '#E8DAC4'
       }).then(canvas => {
+        // Restore mobile scale
+        flyer.style.transform = prevTransform;
+        flyer.style.transformOrigin = prevOrigin;
+
         const link = document.createElement('a');
         link.download = 'HDZ-Tree-Company-Ad.png';
         link.href = canvas.toDataURL('image/png');
@@ -1091,6 +1210,8 @@
         btn.innerHTML = originalText;
         btn.disabled = false;
       }).catch(err => {
+        flyer.style.transform = prevTransform;
+        flyer.style.transformOrigin = prevOrigin;
         console.error('Export error:', err);
         alert('Could not export image directly. You can use window.print() or a screenshot tool.');
         btn.innerHTML = originalText;
