@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDZ Tree Company — Social & Print Ad Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Simple, strong, authentic contractor fonts: Montserrat (punchy headers) and Inter (clean readable text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- html2canvas for 1-click high-res image export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    :root {
+      /* Tree Company Theme Palette */
+      --kraft-bg: #E7DCB8;
+      --kraft-paper-texture: #DFCEB4;
+      --kraft-ink: #23180F;
+      --kraft-subtext: #5A4A3C;
+      
+      /* Primary Deep Forest Greens */
+      --tree-green-dark: #0F2415;
+      --tree-green-mid: #18381F;
+      --tree-green-light: #23522C;
+      
+      /* Accent Colors */
+      --amber-gold: #F5B027;
+      --amber-light: #FDE68A;
+      --amber-warm: #E28F12;
+      --bark-brown: #4A2D16;
+      --accent-red: #D6372A;
+      --cream-text: #FAF6ED;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #181E19;
+      color: #333;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 70px;
+    }
+
+    /* Top Action Bar (for downloading & customization) */
+    .toolbar {
+      max-width: 820px;
+      width: 100%;
+      background: #252D26;
+      border: 1px solid #3A463B;
+      border-radius: 12px;
+      padding: 14px 22px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      color: #e5ede6;
+    }
+
+    .toolbar-title {
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolbar-title span {
+      background: var(--amber-gold);
+      color: #122b18;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-amber {
+      background: var(--amber-gold);
+      color: #122b18;
+      box-shadow: 0 4px 12px rgba(245, 176, 39, 0.35);
+    }
+    .btn-amber:hover {
+      background: #df9b15;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #364137;
+      color: #e5ede6;
+      border: 1px solid #4D5C4F;
+    }
+    .btn-secondary:hover {
+      background: #445346;
+    }
+
+    /* THE FLYER CANVAS */
+    .flyer-wrapper {
+      position: relative;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255,255,255,0.06);
+      border-radius: 6px;
+      overflow: hidden;
+      width: 740px;
+      height: 1050px;
+      background: #E8DAC4; /* Solid authentic kraft paper tone */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Fine craft paper grain effect */
+    .flyer-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(#968369 0.85px, transparent 0.85px),
+        radial-gradient(#7c6a51 0.5px, transparent 0.5px);
+      background-size: 26px 26px, 13px 13px;
+      background-position: 0 0, 7px 7px;
+      opacity: 0.14;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ========================================================
+       TOP HEADER (Solid Kraft Paper Zone)
+       ======================================================== */
+    .flyer-header {
+      position: relative;
+      z-index: 2;
+      padding: 24px 38px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #E8DAC4; /* Solid, matching paper trim */
+    }
+
+    /* Brand Logo / Mark */
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand-logo-wrap {
+      position: relative;
+    }
+
+    .brand-logo-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2.5px solid var(--kraft-ink);
+      box-shadow: 0 4px 10px rgba(35, 24, 15, 0.25);
+      display: block;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      color: var(--kraft-ink);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2.2px;
+      font-weight: 700;
+      color: var(--kraft-subtext);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Differentiated Top Right: Ribbon Badge Header */
+    .header-badge-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .header-headline-pill {
+      background: var(--kraft-ink);
+      color: #FAF4E8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 6px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-headline-pill span {
+      color: var(--amber-gold);
+    }
+
+    .header-sub-banner {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      color: #634F3C;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-sub-banner::before,
+    .header-sub-banner::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 1.5px;
+      background: #87715B;
+    }
+
+    /* ========================================================
+       TORN PAPER EDGES (SVG Dividers)
+       Solid color perfectly matching the green body!
+       ======================================================== */
+    .torn-paper-edge-top {
+      position: relative;
+      width: 100%;
+      height: 26px;
+      margin-bottom: -1px;
+      z-index: 5;
+      overflow: hidden;
+      filter: drop-shadow(0 -2px 3px rgba(0,0,0,0.2));
+    }
+
+    .torn-paper-edge-bottom {
+      position: relative;
+      width: 100%;
+      height: 26px;
+      margin-top: -1px;
+      z-index: 5;
+      overflow: hidden;
+      filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25));
+    }
+
+    /* ========================================================
+       CENTER BODY (Solid Deep Forest Pine - NO Gradients / Shading)
+       ======================================================== */
+    .flyer-body {
+      position: relative;
+      z-index: 3;
+      flex: 1;
+      background: #153C1F; /* Solid single color - exactly matches paper trim! */
+      padding: 26px 38px 20px; /* Generous top padding - text is NOT close to the top */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* --------------------------------------------------------
+       TRUST BADGE STRIP: Strictly 1 Single Horizontal Line!
+       No wrapping, no dots, no background, no border.
+       -------------------------------------------------------- */
+    .trust-ribbon-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 24px; /* Generous breathing room under trust line */
+      background: transparent;
+      border: none;
+      flex-wrap: nowrap;     /* Forces strictly one line */
+      white-space: nowrap;   /* Prevents any text wrapping */
+    }
+
+    .trust-ribbon-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;   /* No wrapping inside item */
+      flex-shrink: 0;        /* Do not crush items */
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--amber-light);
+    }
+
+    .trust-check {
+      color: var(--amber-gold);
+      font-size: 14px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Content Split: Services List (Left) & Portrait Photo Showcase (Right) */
+    .body-content-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex: 1;
+      margin-bottom: 14px;
+    }
+
+    /* Left Side: Services List - Doubled empty line spacing between each service item */
+    .services-list-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px; /* Doubled spacing between each service */
+      padding-left: 6px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--cream-text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      text-shadow: 
+        1px 2px 4px rgba(0,0,0,0.7),
+        0 0 1px rgba(0,0,0,0.9);
+      transition: transform 0.15s ease;
+    }
+
+    /* Evergreen Pine Tree Bullet */
+    .service-bullet-icon {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--amber-gold);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+
+    .service-bullet-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Highlighted "...AND MORE!" Line */
+    .and-more-highlight {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--amber-gold);
+      padding-left: 38px;
+      text-transform: uppercase;
+      text-shadow: 
+        2px 3px 5px rgba(0,0,0,0.8),
+        0 0 16px rgba(245, 176, 39, 0.45);
+    }
+
+    /* --------------------------------------------------------
+       RIGHT SIDE: 4-PHOTO BEFORE & AFTER TRANSFORMATION GRID
+       Natural 3:4 portrait ratio for all 4 camera shots!
+       Row gap doubled to 48px to boldly differentiate Pair 1 & Pair 2!
+       -------------------------------------------------------- */
+    .photos-grid-4 {
+      width: 342px;
+      height: 460px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 10px;
+      row-gap: 48px; /* Doubled separation between first two and second two images */
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    /* Clean Frameless Portrait Cards */
+    .photo-card-frame {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: none;
+      box-shadow: 
+        0 8px 20px rgba(0,0,0,0.5),
+        0 2px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: #0E2413;
+    }
+
+    .photo-card-frame:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.65);
+    }
+
+    .photo-card-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    /* Slight grayscale on the BEFORE images */
+    .photo-card-frame.is-before img {
+      filter: grayscale(45%) contrast(105%);
+    }
+
+    /* Plain, un-fancy BEFORE / AFTER text directly on images */
+    .photo-label-plain {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* --------------------------------------------------------
+       24/7 STORM RESPONSE (Clean, unbordered, no background)
+       -------------------------------------------------------- */
+    .body-footer-callout {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 4px 0;
+      background: transparent;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .callout-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber-gold);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+      flex-shrink: 0;
+    }
+
+    .callout-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+    }
+
+    .callout-text-main {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      color: var(--cream-text);
+      text-transform: uppercase;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+      line-height: 1.1;
+    }
+
+    /* ========================================================
+       BOTTOM FOOTER (Solid Kraft Paper Zone)
+       ======================================================== */
+    .flyer-footer {
+      position: relative;
+      z-index: 2;
+      padding: 20px 40px 24px;
+      background: #E8DAC4; /* Solid matching kraft */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-contact-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-icon-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(35, 24, 15, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-red);
+      flex-shrink: 0;
+      border: 1.5px solid rgba(214, 55, 42, 0.25);
+    }
+
+    .contact-icon-badge svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .contact-text-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-label-small {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      color: #7A6753;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .contact-text-bold {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: var(--kraft-ink);
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .contact-phone-bold {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      color: var(--kraft-ink);
+      line-height: 1.1;
+    }
+
+    .contact-divider {
+      width: 2px;
+      height: 46px;
+      background: rgba(35, 24, 15, 0.2);
+    }
+
+    /* Clean bold URL at bottom */
+    .footer-website-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--kraft-ink);
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.15s ease;
+      margin-top: 2px;
+    }
+
+    .footer-website-link:hover {
+      color: var(--tree-green-mid);
+    }
+
+    /* ========================================================
+       LIVE INLINE EDIT CONTROLS
+       ======================================================== */
+    [contenteditable="true"] {
+      outline: 1px dashed transparent;
+      transition: all 0.2s ease;
+      cursor: text;
+    }
+    [contenteditable="true"]:hover {
+      outline: 1px dashed rgba(245, 176, 39, 0.7);
+      background: rgba(245, 176, 39, 0.09);
+      border-radius: 3px;
+    }
+    [contenteditable="true"]:focus {
+      outline: 2px solid var(--amber-gold);
+      background: rgba(245, 176, 39, 0.16);
+      border-radius: 3px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .toolbar, .notes-section {
+        display: none !important;
+      }
+      .flyer-wrapper {
+        box-shadow: none;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+      }
+    }
+
+    /* Bottom Info & Cheat Sheet Box */
+    .notes-section {
+      max-width: 820px;
+      width: 100%;
+      background: #232A24;
+      border: 1px solid #384639;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 30px;
+      color: #e5ede6;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .notes-section h3 {
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 12px;
+      color: var(--amber-gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .note-card {
+      background: #1A211B;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #2F3B31;
+    }
+
+    .note-card strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 6px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .color-swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="toolbar">
+    <div class="toolbar-title">
+      🌲 HDZ Tree Company Ad
+      <span>Solid Colors &amp; Balanced Layout</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn btn-amber" id="btn-export-png" onclick="exportAsPNG()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Ad Image (PNG)
+      </button>
+      <button class="btn btn-secondary" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print / PDF
+      </button>
+      <button class="btn btn-secondary" id="btn-swap-photos" onclick="cycleBeforeAfter()">
+        🔄 Swap Before/Afters
+      </button>
+      <button class="btn btn-secondary" id="btn-toggle-palette" onclick="toggleColorTheme()">
+        🎨 Switch Theme
+      </button>
+    </div>
+  </div>
+
+  <!-- THE AD CANVAS (CLICK ANY TEXT TO EDIT INLINE!) -->
+  <div class="flyer-wrapper" id="flyer-canvas">
+
+    <!-- TOP SECTION: Solid Kraft Paper Banner with Logo & Distinctive Arborist Badge -->
+    <header class="flyer-header">
+      
+      <!-- Brand & Logo -->
+      <div class="brand-block">
+        <div class="brand-logo-wrap">
+          <img src="photos/logo.jpg" alt="HDZ Tree Company Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <div class="brand-name" contenteditable="true">HDZ TREE COMPANY</div>
+          <div class="brand-tagline" contenteditable="true">CERTIFIED ARBORIST &bull; AURORA, IL</div>
+        </div>
+      </div>
+
+      <!-- Differentiated Arborist Headline Badge -->
+      <div class="header-badge-box">
+        <div class="header-headline-pill" contenteditable="true">
+          <span>★</span> FREE ESTIMATES <span>★</span>
+        </div>
+        <div class="header-sub-banner" contenteditable="true">
+          EXPERT TREE REMOVAL &amp; CARE
+        </div>
+      </div>
+
+    </header>
+
+    <!-- Top Torn Paper Edge (SVG Jagged Rip) - Matches solid green exactly -->
+    <div class="torn-paper-edge-top">
+      <svg viewBox="0 0 1000 32" preserveAspectRatio="none" style="width: 100%; height: 100%; display: block;">
+        <path d="M0,0 L0,18 Q35,8 70,22 Q110,6 150,20 Q190,10 230,24 Q280,7 330,21 Q380,5 420,19 Q470,11 510,24 Q560,8 600,20 Q650,5 700,22 Q750,11 790,21 Q830,7 880,24 Q930,12 970,20 L1000,16 L1000,32 L0,32 Z" fill="#153C1F" id="top-torn-fill"/>
+      </svg>
+    </div>
+
+    <!-- MAIN BODY: Solid Forest Green (No gradients, no shading, seamlessly unified with torn edges) -->
+    <main class="flyer-body" id="flyer-body-bg">
+      
+      <!-- Trust Strip: Clean single horizontal line, NO wrapping, NO dots, NO border, NO background -->
+      <div class="trust-ribbon-bar">
+        <div class="trust-ribbon-item">
+          <span class="trust-check">✔</span> Fully Licensed &amp; Insured
+        </div>
+        <div class="trust-ribbon-item">
+          <span class="trust-check">✔</span> Certified Arborist
+        </div>
+        <div class="trust-ribbon-item">
+          <span class="trust-check">✔</span> Same-Day Response
+        </div>
+      </div>
+
+      <div class="body-content-split">
+        
+        <!-- Left Column: 6 Core Services with generous vertical centering (NOT touching the top!) -->
+        <div class="services-list-col">
+          
+          <div class="service-item">
+            <span class="service-bullet-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 12h3.5L3 17h6v5h6v-5h6l-4.5-5H20L12 2z"/></svg>
+            </span>
+            <span contenteditable="true">TREE REMOVAL</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-bullet-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 12h3.5L3 17h6v5h6v-5h6l-4.5-5H20L12 2z"/></svg>
+            </span>
+            <span contenteditable="true">TREE TRIMMING</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-bullet-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 12h3.5L3 17h6v5h6v-5h6l-4.5-5H20L12 2z"/></svg>
+            </span>
+            <span contenteditable="true">STUMP GRINDING</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-bullet-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 12h3.5L3 17h6v5h6v-5h6l-4.5-5H20L12 2z"/></svg>
+            </span>
+            <span contenteditable="true">PRUNING &amp; SHAPING</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-bullet-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 12h3.5L3 17h6v5h6v-5h6l-4.5-5H20L12 2z"/></svg>
+            </span>
+            <span contenteditable="true">STORM DAMAGE</span>
+          </div>
+
+          <div class="service-item">
+            <span class="service-bullet-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4 12h3.5L3 17h6v5h6v-5h6l-4.5-5H20L12 2z"/></svg>
+            </span>
+            <span contenteditable="true">LOT CLEARING</span>
+          </div>
+
+          <!-- Highlighted Callout Line -->
+          <div class="and-more-highlight" contenteditable="true">
+            ...AND MORE!
+          </div>
+
+        </div>
+
+        <!-- Right Column: 4-PHOTO BEFORE & AFTER TRANSFORMATION GRID -->
+        <div class="photos-grid-4" id="photos-grid">
+          
+          <!-- Pair 1: Big Fallen Tree (Top Left Before -> Bottom Right After) -->
+          <div class="photo-card-frame is-before" id="card-1">
+            <img src="photos/bigfallentree.jpg" alt="Storm Damage Big Fallen Tree Before" id="img-slot-1">
+            <div class="photo-label-plain">BEFORE</div>
+          </div>
+
+          <div class="photo-card-frame" id="card-2">
+            <img src="photos/bigfallentreeafter.jpg" alt="Storm Damage Clean Yard After" id="img-slot-2">
+            <div class="photo-label-plain">AFTER</div>
+          </div>
+
+          <!-- Pair 2: Huge Fallen Tree (Below: Before -> Bottom Right After) -->
+          <div class="photo-card-frame is-before" id="card-3">
+            <img src="photos/hugefallentree.jpg" alt="Huge Fallen Tree Hazard Before" id="img-slot-3">
+            <div class="photo-label-plain">BEFORE</div>
+          </div>
+
+          <div class="photo-card-frame" id="card-4">
+            <img src="photos/hugefallentreeafter.jpg" alt="Huge Fallen Tree Clean Yard After" id="img-slot-4">
+            <div class="photo-label-plain">AFTER</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Callout: 24/7 Storm Response (Clean Icon + Text, NO border, NO background) -->
+      <div class="body-footer-callout">
+        <span class="callout-icon">
+          <!-- Lightning bolt / Emergency icon -->
+          <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+        </span>
+        <div class="callout-text-main" contenteditable="true">
+          24/7 EMERGENCY STORM RESPONSE
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Bottom Torn Paper Edge (SVG Jagged Rip) - Matches solid green exactly -->
+    <div class="torn-paper-edge-bottom">
+      <svg viewBox="0 0 1000 32" preserveAspectRatio="none" style="width: 100%; height: 100%; display: block;">
+        <path d="M0,32 L0,14 Q40,24 80,10 Q120,25 160,12 Q210,27 250,9 Q300,24 350,11 Q400,26 440,12 Q490,25 530,10 Q580,24 620,11 Q670,27 710,13 Q760,25 800,10 Q850,26 890,11 Q940,24 980,12 L1000,16 L1000,0 L0,0 Z" fill="#153C1F" id="bottom-torn-fill"/>
+      </svg>
+    </div>
+
+    <!-- BOTTOM SECTION: Solid Kraft Paper Footer with Service Area & Direct Call -->
+    <footer class="flyer-footer">
+      
+      <div class="footer-contact-row">
+        
+        <!-- Location / Service Area -->
+        <div class="contact-item">
+          <div class="contact-icon-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <div class="contact-text-box">
+            <div class="contact-label-small">Service Areas</div>
+            <div class="contact-text-bold" contenteditable="true">
+              AURORA, IL &amp; FOX VALLEY
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="contact-divider"></div>
+
+        <!-- Phone Number -->
+        <div class="contact-item">
+          <div class="contact-icon-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.36 11.36 0 0 1 8.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z"/>
+            </svg>
+          </div>
+          <div class="contact-text-box">
+            <div class="contact-label-small">Call or Text Anytime</div>
+            <div class="contact-phone-bold" contenteditable="true">
+              (331) 575-4970
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Clean, authentic uppercase company URL -->
+      <a href="https://hdztreecompany.com" class="footer-website-link" contenteditable="true">
+        WWW.HDZTREECOMPANY.COM
+      </a>
+
+    </footer>
+
+  </div>
+
+  <!-- DESIGN GUIDE & LAYOUT NOTES -->
+  <div class="notes-section">
+    <h3>💡 Design Guide &amp; Updated Layout Notes</h3>
+    <p>Solid colors ensure the jagged paper trim blends seamlessly with the background, while the 4-photo Before &amp; After grid displays dramatic tree removal transformations:</p>
+    
+    <div class="notes-grid">
+      <div class="note-card">
+        <strong>🎨 Solid Colors (Seamless Trim)</strong>
+        <div>• <strong>Green Canvas:</strong> Single solid deep forest pine (<code>#153C1F</code>) matching torn SVG edges exactly.</div>
+        <div>• <strong>Kraft Paper:</strong> Single solid kraft tone (<code>#E8DAC4</code>) across top header and bottom footer.</div>
+        <div>• <strong>Seamless:</strong> Zero gradient banding, radial glare, or shading seam breaks.</div>
+      </div>
+
+      <div class="note-card">
+        <strong>📷 4-Photo Before &amp; After Grid</strong>
+        <div>• <strong>Plain Text:</strong> Plain un-fussy BEFORE and AFTER labels directly on the photos (no pill boxes or borders).</div>
+        <div>• <strong>Grayscale Befores:</strong> Subtle 45% desaturation on before shots to emphasize the vibrant green after results.</div>
+        <div>• <strong>Doubled Separation:</strong> Generous 48px vertical gap clearly distinguishing Pair 1 from Pair 2.</div>
+      </div>
+
+      <div class="note-card">
+        <strong>✨ Cleaned Up Elements</strong>
+        <div>• <strong>Services Spacing:</strong> Doubled empty line spacing (50px gap) cleanly separating each core tree service.</div>
+        <div>• <strong>Trust Line:</strong> Locked to 1 single horizontal line with <code>white-space: nowrap</code> (no wrapping).</div>
+        <div>• <strong>24/7 Response:</strong> Clean glowing lightning bolt icon + bold text, completely unbordered.</div>
+      </div>
+
+      <div class="note-card">
+        <strong>📐 Interactive Controls</strong>
+        <div>• <strong>Swap Before/Afters:</strong> Cycle through other transformation pairs from your job gallery.</div>
+        <div>• <strong>Switch Theme:</strong> Switch between 4 curated solid contractor palettes.</div>
+        <div>• <strong>High-Res PNG:</strong> 1-click retina image download ready for social media and print.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Real Before & After transformation pairs from HDZ Tree Company folder
+    const beforeAfterSets = [
+      {
+        p1Before: 'photos/bigfallentree.jpg',
+        p1After: 'photos/bigfallentreeafter.jpg',
+        p2Before: 'photos/hugefallentree.jpg',
+        p2After: 'photos/hugefallentreeafter.jpg',
+        name: 'STORM DAMAGE CLEANUP'
+      },
+      {
+        p1Before: 'photos/woodenfencetree.jpg',
+        p1After: 'photos/woodenfencetreeafter.jpg',
+        p2Before: 'photos/bigdeadtreefence.jpg',
+        p2After: 'photos/bigdeadtreefenceafter.jpg',
+        name: 'FENCE & PROPERTY CLEARING'
+      },
+      {
+        p1Before: 'photos/wirefencetreebefore.jpg',
+        p1After: 'photos/wirefencetreeafter.jpg',
+        p2Before: 'photos/oldtree.jpg',
+        p2After: 'photos/oldtreeafter.jpg',
+        name: 'RESIDENTIAL TREE REMOVAL'
+      },
+      {
+        p1Before: 'photos/bigcornertreebefore.jpg',
+        p1After: 'photos/bigcornertreeafter.jpg',
+        p2Before: 'photos/lowrestreebefore.jpg',
+        p2After: 'photos/lowrestreeafter.jpg',
+        name: 'COMPLETE YARD RESTORATION'
+      }
+    ];
+
+    let setIndex = 0;
+
+    function cycleBeforeAfter() {
+      setIndex = (setIndex + 1) % beforeAfterSets.length;
+      const s = beforeAfterSets[setIndex];
+
+      document.getElementById('img-slot-1').src = s.p1Before;
+      document.getElementById('img-slot-2').src = s.p1After;
+      document.getElementById('img-slot-3').src = s.p2Before;
+      document.getElementById('img-slot-4').src = s.p2After;
+    }
+
+    // Color theme toggling with SOLID clean contractor colors (no gradient seams)
+    let currentTheme = 0;
+    const themes = [
+      {
+        name: 'Deep Pine Forest',
+        solidBg: '#153C1F',
+        highlight: '#F5B027'
+      },
+      {
+        name: 'Alpine Spruce',
+        solidBg: '#0F2C18',
+        highlight: '#FFC837'
+      },
+      {
+        name: 'Hunter Green',
+        solidBg: '#184725',
+        highlight: '#F6B43C'
+      },
+      {
+        name: 'Midnight Pine',
+        solidBg: '#0C1F12',
+        highlight: '#F5B027'
+      }
+    ];
+
+    function toggleColorTheme() {
+      currentTheme = (currentTheme + 1) % themes.length;
+      const t = themes[currentTheme];
+      document.getElementById('flyer-body-bg').style.background = t.solidBg;
+      document.getElementById('top-torn-fill').setAttribute('fill', t.solidBg);
+      document.getElementById('bottom-torn-fill').setAttribute('fill', t.solidBg);
+      document.querySelector('.and-more-highlight').style.color = t.highlight;
+      document.getElementById('btn-toggle-palette').textContent = `🎨 Theme: ${t.name}`;
+    }
+
+    // 1-Click High Resolution PNG Exporter
+    function exportAsPNG() {
+      const btn = document.getElementById('btn-export-png');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '⏳ Generating high-res image...';
+      btn.disabled = true;
+
+      const flyer = document.getElementById('flyer-canvas');
+
+      // html2canvas high-res scale (2.5x for crisp retina output)
+      html2canvas(flyer, {
+        scale: 2.5,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#E8DAC4'
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'HDZ-Tree-Company-Ad.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }).catch(err => {
+        console.error('Export error:', err);
+        alert('Could not export image directly. You can use window.print() or a screenshot tool.');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    }
+  </script>
+
+</body>
+</html>
+
