@@ -158,7 +158,7 @@
             </a>
           </div>
 
-          <!-- Free Estimate Online Form (FormSubmit.co) -->
+          <!-- Free Estimate Online Form (Web3Forms) -->
           <div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line);">
             <div style="margin-bottom: 14px;">
               <div class="label" style="font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss-dark); margin-bottom: 3px;">Online Estimate Request</div>
@@ -174,13 +174,14 @@
               </div>
             </div>
 
-            <form action="https://formsubmit.co/hdztreeco@gmail.com" method="POST" class="estimate-form" id="estimate-form">
-              <!-- Spam prevention & config -->
-              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_subject" value="New Estimate Request — HDZ Tree Company">
-              <input type="hidden" name="_next" value="https://hdztreecompany.com/contact.html?submitted=true">
+            <form action="https://api.web3forms.com/submit" method="POST" class="estimate-form" id="estimate-form">
+              <!-- Web3Forms Access Key & Configuration -->
+              <input type="hidden" name="access_key" value="b2aa6cc4-d35c-4685-b6a6-04693fc19832">
+              <input type="hidden" name="subject" value="New Estimate Request — HDZ Tree Company">
+              <input type="hidden" name="from_name" value="HDZ Tree Company Website">
+              <input type="hidden" name="redirect" value="https://hdztreecompany.com/contact.html?submitted=true">
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
               <div class="form-row-2">
                 <div class="form-group">
@@ -381,7 +382,7 @@
 
   updateHeaderState();
 
-  // Reveal estimate confirmation banner if redirected from FormSubmit
+  // Reveal estimate confirmation banner if redirected from Web3Forms
   if (window.location.search.includes('submitted=true')) {
     const banner = document.getElementById('form-success-banner');
     if (banner) {
